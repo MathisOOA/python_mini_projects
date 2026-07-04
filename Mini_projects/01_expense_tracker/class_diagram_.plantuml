@@ -1,0 +1,24 @@
+@startuml Class diagram
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+top to bottom direction
+skinparam linetype ortho
+
+class main {
+    - main()
+}
+
+class expense_tracker {
+
+    - expense_list
+    
+    - display_menu()
+    - add_expense()
+    - remove_expense()
+    - view_expense()
+    - calculate_total_spent()
+    + run_app()
+
+}
+@enduml
