@@ -12,9 +12,10 @@ class ExpenseTracker {
     
     - display_menu()
     - add_expense()
-    - remove_expense()
+    - delete_expense()
     - view_expense()
     - calculate_total_spent()
+    - get_expense(expense_id: int) : Expense
 
     + run_app()
 

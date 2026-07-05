@@ -5,10 +5,10 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 ## Features
 
 * Add a new expense *(Input validation - in progress)*
-* Delete an existing expense *(To be implemented)*
-* View all recorded expenses *(To be implemented)*
+* Delete an existing expense *(COMPLETED)*
+* View all recorded expenses *(COMPLETED)*
 * Calculate the total amount spent *(COMPLETED)*
-* Automatically record the date and time of each expense
+* Automatically record the date and time of each expense *(COMPLETED)*
 
 ## Technologies
 
@@ -22,17 +22,17 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 │
 ├── main.py
 ├── expense_tracker.py
+├── expense.py
 ├── class_diagram.plantUML
 └── README.md
 ```
 
-## Skills Practiced
-
+## Skills Practiced 
 * Object-Oriented Programming (Classes and Objects)
 * Functions and Methods
 * Loops
 * Conditional Statements
-* Lists and Dictionaries
+* Lists
 * User Input
 * Date and Time Handling
 * UML class diagrams (PlantUML)
@@ -42,7 +42,6 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 * Save expenses to a CSV or JSON file
 * Load saved expenses when the program starts
 * Edit existing expenses
-* Delete expenses
 * Search expenses by name
 * Filter expenses by date
 * Display spending statistics

@@ -2,8 +2,11 @@ from datetime import datetime
 from expense import Expense
 
 class ExpenseTracker:
+    
+    #TEST À RETIRER QUAND J'AURAI FINIS L'IMPLEMENTATION 
     expense1 = Expense('07/05/2026, 15:43:26', 'chocolat', 21.3)
     expense2 = Expense('11/21/2026, 05:03:26', 'Cacao', 8.32)
+
     expense_list = [expense1,expense2]
 
     def display_menu(self) : 
@@ -51,6 +54,7 @@ class ExpenseTracker:
 
         expense = Expense(date,expense_name,amount)
         self.expense_list.append(expense)
+
     
     def view_expense(self) :
         print("""
@@ -60,7 +64,6 @@ ID      Name         Date("m/d/Y, H:M:S")     Amount
         for expense in self.expense_list :
             print(expense)
         
-
     def show_total_spent(self) :
         total_expense = 0
 
@@ -71,7 +74,27 @@ ID      Name         Date("m/d/Y, H:M:S")     Amount
 
 
     def delete_expense(self) :
-        pass
+        try :
+            expense_id = int(input('Enter the ID of the expense you wish to remove : ')) #Gérer les cas où l'utilisateur n'entre pas une valeur convenable
+        except ValueError :
+            print("Invalid input. Please enter a number.")
+            return
+        
+        expense = self.get_expense(expense_id)
+
+        if(expense != None) : 
+            self.expense_list.remove(expense)
+            print('The expense was successfully removed!')
+
+        else :
+            print('The ID you entered isn\'t valid!')
+        
+
+    def get_expense(self, expense_id) :
+        for expense in self.expense_list :
+            if(expense.id == expense_id) :
+                return expense
+        return None
 
     def run_app(self) :
         self.display_menu()
