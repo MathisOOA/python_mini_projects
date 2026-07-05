@@ -5,20 +5,35 @@ skinparam classAttributeIconSize 0
 top to bottom direction
 skinparam linetype ortho
 
-class main {
-    - main()
-}
 
-class expense_tracker {
+class ExpenseTracker {
 
-    - expense_list
+    - expense_list : list
     
     - display_menu()
     - add_expense()
     - remove_expense()
     - view_expense()
     - calculate_total_spent()
+
     + run_app()
 
 }
+
+class Expense {
+    
+    {static} current_id: int = 1 
+    - id: int
+    - date: str
+    - name: str
+    - amount: float
+
+    + __init__(date : str, name :string ,amount: float)
+    + __str__() : str
+
+
+}
+
+ExpenseTracker -> Expense
+
 @enduml
