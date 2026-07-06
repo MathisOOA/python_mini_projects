@@ -1,13 +1,12 @@
 from datetime import datetime
 from expense import Expense
+from storage_expense import StorageExpense
 
 class ExpenseTracker:
-    
-    #TEST À RETIRER QUAND J'AURAI FINIS L'IMPLEMENTATION 
-    expense1 = Expense('07/05/2026, 15:43:26', 'chocolat', 21.3)
-    expense2 = Expense('11/21/2026, 05:03:26', 'Cacao', 8.32)
 
-    expense_list = [expense1,expense2]
+    def __init__(self):
+        self.expense_list = []
+        self.storage = StorageExpense()
 
     def display_menu(self) : 
 
@@ -47,14 +46,14 @@ class ExpenseTracker:
         date = datetime.now()
         date = date.strftime("%m/%d/%Y, %H:%M:%S")
         
-
         print('Please enter the following details :')
         expense_name = input('Expense name : ')
-        amount = float(input('Amount : ')) #Gérer les cas où l'utilisateur n'entre pas une valeur convenable
+        amount = float(input('Amount : '))
 
-        expense = Expense(date,expense_name,amount)
+        expense = Expense(date, expense_name, amount)
         self.expense_list.append(expense)
 
+        self.storage.save_expenses(self.expense_list)
     
     def view_expense(self) :
         print("""
@@ -95,6 +94,6 @@ ID      Name         Date("m/d/Y, H:M:S")     Amount
             if(expense.id == expense_id) :
                 return expense
         return None
-
+    
     def run_app(self) :
         self.display_menu()
