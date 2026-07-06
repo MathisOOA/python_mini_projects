@@ -9,14 +9,16 @@ skinparam linetype ortho
 class ExpenseTracker {
 
     - expense_list : list
+    - storage : StorageExpense
     
     - display_menu()
     - add_expense()
     - delete_expense()
     - view_expense()
-    - calculate_total_spent()
+    - show_total_spent()
     - get_expense(expense_id: int) : Expense
 
+    + __init__()
     + run_app()
 
 }
@@ -35,6 +37,13 @@ class Expense {
 
 }
 
+class StorageExpense {
+    
+    - load_expenses()
+    - save_expenses(expenses:list)
+}
+
 ExpenseTracker -> Expense
+ExpenseTracker -> StorageExpense
 
 @enduml
