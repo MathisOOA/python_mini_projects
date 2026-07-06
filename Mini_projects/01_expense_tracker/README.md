@@ -13,6 +13,7 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 ## Technologies
 
 * Python 3
+* JSON (data storage)
 * `datetime` (standard library)
 
 ## Project Structure *(In progress)*
@@ -20,11 +21,14 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 ```text
 01-expense-tracker/
 │
+├──data
+  └── expenses.json
 ├── main.py
 ├── expense_tracker.py
 ├── expense.py
 ├── class_diagram.plantUML
-└── README.md
+├── README.md
+└── storage_enpense.py
 ```
 
 ## Skills Practiced 
