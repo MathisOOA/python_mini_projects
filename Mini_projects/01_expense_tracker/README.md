@@ -43,9 +43,9 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 
 
 ## Future Improvements
-* Save expenses to a CSV or JSON file
-* Load saved expenses when the program starts
-* Edit existing expenses
+* Save expenses to a CSV or JSON file *(COMPLETED)*
+* Load saved expenses when the program starts *(COMPLETED)*
+* Edit existing expenses *(IN PROGRESS)*
 * Search expenses by name
 * Filter expenses by date
 * Display spending statistics
