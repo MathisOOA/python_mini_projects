@@ -5,8 +5,8 @@ from storage_expense import StorageExpense
 class ExpenseTracker:
 
     def __init__(self):
-        self.expense_list = []
         self.storage = StorageExpense()
+        self.expense_list = self.storage.load_expenses()
 
     def display_menu(self) : 
 
@@ -50,7 +50,7 @@ class ExpenseTracker:
         expense_name = input('Expense name : ')
         amount = float(input('Amount : '))
 
-        expense = Expense(date, expense_name, amount)
+        expense = Expense(Expense.current_id, date, expense_name, amount)
         self.expense_list.append(expense)
 
         self.storage.save_expenses(self.expense_list)
@@ -59,9 +59,11 @@ class ExpenseTracker:
         print("""
 ID      Name         Date("m/d/Y, H:M:S")     Amount
 ------------------------------------------------------""")
-        
-        for expense in self.expense_list :
-            print(expense)
+        data = self.storage.load_expenses()
+
+        for extense in data :
+            print(extense)
+
         
     def show_total_spent(self) :
         total_expense = 0
@@ -83,6 +85,7 @@ ID      Name         Date("m/d/Y, H:M:S")     Amount
 
         if(expense != None) : 
             self.expense_list.remove(expense)
+            self.storage.save_expenses(self.expense_list)
             print('The expense was successfully removed!')
 
         else :
