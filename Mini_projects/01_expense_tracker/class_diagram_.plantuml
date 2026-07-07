@@ -10,6 +10,9 @@ class ExpenseTracker {
 
     - expense_list : list
     - storage : StorageExpense
+
+    + __init__()
+    + run_app()
     
     - display_menu()
     - add_expense()
@@ -17,10 +20,6 @@ class ExpenseTracker {
     - view_expense()
     - show_total_spent()
     - get_expense(expense_id: int) : Expense
-
-    + __init__()
-    + run_app()
-
 }
 
 class Expense {
@@ -31,7 +30,9 @@ class Expense {
     - name: str
     - amount: float
 
-    + __init__(date : str, name :string ,amount: float)
+    + __init__(id: int, date : str, name :string ,amount: float)
+    + to_dict() : dict
+    {static} + to_expense(dict_expense : dict) : Expense
     + __str__() : str
 
 
@@ -39,11 +40,12 @@ class Expense {
 
 class StorageExpense {
     
-    - load_expenses()
-    - save_expenses(expenses:list)
+    + load_expenses() : list<Expense>
+    + save_expenses(expenses:list)
 }
 
 ExpenseTracker -> Expense
 ExpenseTracker -> StorageExpense
+StorageExpense -> Expense
 
 @enduml

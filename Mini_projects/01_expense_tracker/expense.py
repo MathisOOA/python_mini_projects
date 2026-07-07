@@ -22,8 +22,8 @@ class Expense :
             "amount": self.amount
         }
     
-    def to_expense(dict) :
-        return Expense(dict['id'],dict['date'],dict['name'],dict['amount'])
+    def to_expense(dict_expense) :
+        return Expense(dict_expense['id'],dict_expense['date'],dict_expense['name'],dict_expense['amount'])
 
     def __str__(self): #Équivalent toString() en java
         return f"{self.id:<5} {self.name:<14} {self.date:<24} {self.amount:>5.2f}$"

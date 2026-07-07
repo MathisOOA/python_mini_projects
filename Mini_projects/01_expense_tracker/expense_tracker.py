@@ -59,9 +59,7 @@ class ExpenseTracker:
         print("""
 ID      Name         Date("m/d/Y, H:M:S")     Amount
 ------------------------------------------------------""")
-        data = self.storage.load_expenses()
-
-        for extense in data :
+        for extense in self.expense_list :
             print(extense)
 
         
@@ -83,7 +81,7 @@ ID      Name         Date("m/d/Y, H:M:S")     Amount
         
         expense = self.get_expense(expense_id)
 
-        if(expense != None) : 
+        if(expense) : 
             self.expense_list.remove(expense)
             self.storage.save_expenses(self.expense_list)
             print('The expense was successfully removed!')
