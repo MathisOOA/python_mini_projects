@@ -17,6 +17,7 @@ class ExpenseTracker {
     - display_menu()
     - add_expense()
     - delete_expense()
+    - sort_expenses_by(variable: str) : bool
     - view_expense()
     - show_total_spent()
     - get_expense(expense_id: int) : Expense
