@@ -4,11 +4,13 @@ class Expense :
 
     def __init__(self,id,date,name,amount): #Constructeur
 
-        if id == None :
+        if id is None :
             self.id = Expense.current_id
             Expense.current_id += 1
         else : 
             self.id = id
+            if(id >= Expense.current_id) :
+                Expense.current_id = id + 1
 
         self.date = date
         self.name = name
