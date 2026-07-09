@@ -21,7 +21,10 @@ class ExpenseTracker:
         5. Exit       
             """)
 
-            input_user = int(input('Choose an option: '))
+            try : 
+                input_user = int(input('Choose an option: '))
+            except ValueError:
+                print('Please choose an option between 1-5!')
 
             if(input_user == 1) :
                 self.add_expense()
@@ -38,9 +41,6 @@ class ExpenseTracker:
             elif(input_user == 5) :
                 print('Goodbye!')
 
-            else : 
-                print('\nPlease choose a valid option!\n')
-
 
     def add_expense(self) :
         date = datetime.now()
@@ -54,15 +54,40 @@ class ExpenseTracker:
         self.expense_list.append(expense)
 
         self.storage.save_expenses(self.expense_list)
-    
-    def view_expense(self) :
-        print("""
-ID      Name         Date("m/d/Y, H:M:S")     Amount
-------------------------------------------------------""")
-        for extense in self.expense_list :
-            print(extense)
 
-        
+
+    def sort_expenses_by(self,variable) :
+        try :
+            self.expense_list.sort(key = lambda expense: getattr(expense,variable))
+            return True
+        except AttributeError as e:
+            print('The variable entered is not valid ! :',e)
+            return False
+    
+
+    def view_expense(self) :
+
+        while True :
+            print("""
+ID      Name         Date("m/d/Y, H:M:S")     Amount
+------------------------------------------------------""") 
+            for extense in self.expense_list :
+                print(extense)
+
+            print("""
+Do you wish to sort your expenses by? :
+[id] [name] [date] [amount]
+
+Type 'exit' to return.""")
+
+            sort_option = input('\nChoose an option: ').lower()
+
+            if(sort_option == 'exit') :
+                break
+
+            self.sort_expenses_by(sort_option)
+
+
     def show_total_spent(self) :
         total_expense = 0
 
