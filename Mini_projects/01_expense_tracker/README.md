@@ -4,7 +4,7 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 
 ## Features
 
-* Add a new expense *(Input validation - in progress)*
+* Add a new expense *(COMPLETED)*
 * Delete an existing expense *(COMPLETED)*
 * View all recorded expenses *(COMPLETED)*
 * Calculate the total amount spent *(COMPLETED)*
@@ -45,9 +45,9 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 ## Future Improvements
 * Save expenses to a CSV or JSON file *(COMPLETED)*
 * Load saved expenses when the program starts *(COMPLETED)*
-* Edit existing expenses *(IN PROGRESS)*
-* Search expenses by name
-* Filter expenses by date
+* Edit existing expenses *(COMPLETED)*
+* Search expenses by name *(COMPLETED)*
+* Filter expenses by date *(COMPLETED)*
 * Display spending statistics
 * Improve input validation and error handling
 
