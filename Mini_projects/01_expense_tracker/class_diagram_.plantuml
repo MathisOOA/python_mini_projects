@@ -35,8 +35,6 @@ class Expense {
     + to_dict() : dict
     {static} + to_expense(dict_expense : dict) : Expense
     + __str__() : str
-
-
 }
 
 class StorageExpense {

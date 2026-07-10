@@ -1,5 +1,4 @@
 import json
-
 from expense import Expense
 
 class StorageExpense :
@@ -25,4 +24,3 @@ class StorageExpense :
 
         with open("Mini_projects/01_expense_tracker/data/expenses.json", "w") as f :
             json.dump(data, f, indent=4)
-

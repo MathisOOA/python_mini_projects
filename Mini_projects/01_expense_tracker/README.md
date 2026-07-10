@@ -1,4 +1,4 @@
-# Expense Tracker
+# Expense Tracker 
 
 A simple command-line Expense Tracker built with Python to practice object-oriented programming, file organization, and data management.
 
