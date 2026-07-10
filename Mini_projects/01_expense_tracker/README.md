@@ -36,7 +36,7 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 * Functions and Methods
 * Loops
 * Conditional Statements
-* Lists
+* Lists and dictionaries
 * User Input
 * Date and Time Handling
 * UML class diagrams (PlantUML)
@@ -48,8 +48,7 @@ A simple command-line Expense Tracker built with Python to practice object-orien
 * Edit existing expenses *(COMPLETED)*
 * Search expenses by name *(COMPLETED)*
 * Filter expenses by date *(COMPLETED)*
-* Display spending statistics
-* Improve input validation and error handling
+* Improve input validation and error handling *(COMPLETED)*
 
 
 This project is part of my Python Mini Projects repository, 
