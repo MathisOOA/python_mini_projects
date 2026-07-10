@@ -97,6 +97,9 @@ Type 'exit' to return.""")
         print('You spent in total {:.2f} $'.format(total_expense))
 
 
+
+
+
     def delete_expense(self) :
         try :
             expense_id = int(input('Enter the ID of the expense you wish to remove : ')) #Gérer les cas où l'utilisateur n'entre pas une valeur convenable
@@ -108,9 +111,13 @@ Type 'exit' to return.""")
 
         if(expense) : 
             self.expense_list.remove(expense)
+
+            for expense in self.expense_list : 
+                    if(expense.id > expense_id) : 
+                        expense.id -= 1
+                        
             self.storage.save_expenses(self.expense_list)
             print('The expense was successfully removed!')
-
         else :
             print('The ID you entered isn\'t valid!')
         
